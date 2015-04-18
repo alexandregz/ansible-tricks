@@ -1,0 +1,27 @@
+---
+- hosts: all
+  tasks:
+  #- name: Instalar PEAR Net/IDNA2
+  #  register: pear_idna2channel_result
+  #  # beta version
+  #  command: pear install channel://pear.php.net/Net_IDNA2-0.1.1
+  #  changed_when: "'already installed' not in pear_idna2channel_result.stdout"
+  #  failed_when: "pear_idna2channel_result.stderr"
+  
+  #- name: Instalar PEAR XML/RPC2
+  #  register: pear_xmlrpc2_result
+  #  command: pear install XML_RPC2
+  #  changed_when: "'already installed' not in pear_xmlrpc2_result.stdout"
+  #  failed_when: "pear_xmlrpc2_result.stderr"
+  #
+  #- name: Install phpunit
+  #  get_url: url=https://phar.phpunit.de/phpunit.phar dest=/usr/local/bin/phpunit mode=555
+  #
+  #- name: Instalar PEAR PHP_CodeSniffer
+  #  register: pear_phpcs_result
+  #  command: pear install PHP_CodeSniffer
+  #  changed_when: "'already installed' not in pear_phpcs_result.stdout"
+  #  failed_when: "pear_phpcs_result.stderr"
+  
+  - name: Instalar PHP Mess Detector
+    get_url: url=http://static.phpmd.org/php/latest/phpmd.phar dest=/usr/local/bin/phpmd mode=555
