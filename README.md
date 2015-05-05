@@ -6,5 +6,6 @@
 
 For example against localhost
 
-```alex@vostok:~/ansible-tricks$ ansible-playbook -i "localhost," -c local playbook.yml
+```bash
+alex@vostok:~/ansible-tricks$ ansible-playbook -i "localhost," -c local playbook.yml
 ```
