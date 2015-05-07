@@ -25,3 +25,26 @@
   
   - name: Instalar PHP Mess Detector
     get_url: url=http://static.phpmd.org/php/latest/phpmd.phar dest=/usr/local/bin/phpmd mode=555
+
+
+  #  # patch to XML_RPC2. To use PEAR because deps
+  #- name: Install PEAR XML/RPC2
+  #  register: pear_xmlrpc2_result
+  #  command: pear install XML_RPC2
+  #  changed_when: "'already installed' not in pear_xmlrpc2_result.stdout"
+  #  failed_when: "pear_xmlrpc2_result.stderr"
+  #
+  #- name: Get PEAR path
+  #  command: pear config-get php_dir
+  #  register: pear_path
+  #
+  #- name: Copy xml_rcp2.patch to host
+  #  copy: src=xml_rcp2.patch dest=/tmp mode=0644
+  #
+  #- name: Patch XML/RPC2
+  ## patch module available with Ansible 1.9
+  ##   patch: >
+  ##     src=/tmp/xml_rcp2.patch
+  ##     dest={{ pear_path.stdout }}/XML/RPC2/Server/Input/RawPostData.php
+  #  command: patch {{ pear_path.stdout }}/XML/RPC2/Server/Input/RawPostData.php /tmp/xml_rcp2.patch
+  #  ignore_errors: yes
